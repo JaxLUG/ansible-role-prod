@@ -3,3 +3,11 @@
   copy: src=files{{ item }} dest={{ item }} mode=0644
   with_items:
     - /boot/
+
+- name: Configure hosts
+  tags: hosts
+  template:
+    src: templates/etc/hosts.j2
+    dest: /etc/hosts
+    mode: 0644
+    backup: yes
