@@ -1,5 +1,6 @@
 ---
 - name: Copy files
+  tags: files
   copy: src=files{{ item }} dest={{ item }} mode=0644
   with_items:
     - /boot/
