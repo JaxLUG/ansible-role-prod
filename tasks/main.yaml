@@ -1,9 +1,10 @@
 ---
 - name: Copy files
   tags: files
-  copy: src=files{{ item }} dest={{ item }} mode=0644
+  copy: src=files{{ item }} dest={{ item }} mode=0644 group=root owner=root
   with_items:
     - /boot/
+    - /etc/inittab
 
 - name: Configure hosts
   tags: hosts
